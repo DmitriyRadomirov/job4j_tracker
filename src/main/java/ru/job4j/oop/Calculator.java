@@ -29,9 +29,7 @@ public class Calculator {
         Calculator calculator = new Calculator();
         int resultMultiply = calculator.multiply(20);
         int resultMinus = Calculator.minus(15);
-        Calculator calculator1 = new Calculator();
-        int resultDivide = calculator1.divide(30);
-        Calculator calculatorAll = new Calculator();
+        int resultDivide = calculator.divide(30);
         int rst = resultSum + resultMultiply + resultMinus + resultDivide;
         System.out.println("Sum: " + resultSum);
         System.out.println("Multiply: " + resultMultiply);
