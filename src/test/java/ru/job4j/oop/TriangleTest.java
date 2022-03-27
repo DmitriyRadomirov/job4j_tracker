@@ -26,4 +26,24 @@ public class TriangleTest {
         double rsl = triangle.area();
         assertThat(rsl, closeTo(-1, 0));
     }
+
+    @Test
+    public void when400and040and004Then8() {
+        Point a = new Point(4, 0, 0);
+        Point b = new Point(0, 4, 0);
+        Point c = new Point(0, 0, 4);
+        Triangle triangle = new Triangle(a, b, c);
+        double rsl = triangle.area();
+        assertThat(rsl, closeTo(8, 0.01));
+    }
+
+    @Test
+    public void when400and400and400ThenMinus1() {
+        Point a = new Point(4, 0, 0);
+        Point b = new Point(4, 0, 0);
+        Point c = new Point(4, 0, 0);
+        Triangle triangle = new Triangle(a, b, c);
+        double rsl = triangle.area();
+        assertThat(rsl, closeTo(-1, 0));
+    }
 }
