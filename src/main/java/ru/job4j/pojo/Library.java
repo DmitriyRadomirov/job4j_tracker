@@ -23,9 +23,9 @@ public class Library {
             System.out.println(lb.getNameBook() + " - " + lb.getPageCount());
         }
         for (int index = 0; index < lib.length; index++) {
-            Book lb = lib[index];
-            if (lib[index].equals(book04)) {
-                System.out.println(lb.getNameBook() + " - " + lb.getPageCount());
+            if ("Clean code".equals(lib[index].getNameBook())) {
+                System.out.println(lib[index].getNameBook() + " - "
+                        + lib[index].getPageCount());
             }
         }
     }
