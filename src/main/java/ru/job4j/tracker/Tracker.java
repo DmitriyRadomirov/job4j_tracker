@@ -72,6 +72,6 @@ public class Tracker {
         System.arraycopy(items, start, items, indexOf, length);
         items[size - 1] = null;
         size--;
-        return indexOf != -1;
+        return indexOf(id) != -1;
     }
 }
