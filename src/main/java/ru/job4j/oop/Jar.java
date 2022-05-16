@@ -17,7 +17,7 @@ public class Jar {
         Jar second = new Jar(5);
         System.out.println("first : " + first.value + ". second : " + second.value);
 
-        first.pour(second); //У объекта first вызываем метод pour
+        first.pour(second);
 
         System.out.println("first : " + first.value + ". second : " + second.value);
 
