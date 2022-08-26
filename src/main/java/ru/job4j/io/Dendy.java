@@ -3,6 +3,12 @@ package ru.job4j.io;
 import java.util.Scanner;
 
 public class Dendy {
+    /**
+     * Это метод возвращает тип данных String. В нашей программе нужно будет String преобразовать в int.
+     * Для этого мы будет использовать метод Integer.parseInt
+     * У объекта Scanner есть метод nextLine(), который считывает все символы строки после нажатия на клавишу Enter.
+     */
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         boolean run = true;
@@ -12,10 +18,6 @@ public class Dendy {
             System.out.println("2. Супер Марио");
             System.out.println("3. Выйти");
             System.out.print("Введите пункт меню, чтобы начать игру: ");
-
-            //Это метод возвращает тип данных String. В нашей программе нужно будет String преобразовать в int.
-            // Для этого мы будет использовать метод Integer.parseInt
-            //У объекта Scanner есть метод nextLine(), который считывает все символы строки после нажатия на клавишу Enter.
             int select = Integer.parseInt(input.nextLine());
             if (select == 3) {
                 System.out.println("Игра завершена.");
