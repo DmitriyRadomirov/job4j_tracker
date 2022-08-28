@@ -3,7 +3,6 @@ package ru.job4j.tracker;
 import java.util.Scanner;
 
 public class StartUI {
-    //1. Метод init() - инициализирует приложение и запускает выполнение различных пользовательских действий;
     public void init(Scanner scanner, Tracker tracker) {
         boolean run = true;
         while (run) {
@@ -18,8 +17,6 @@ public class StartUI {
         }
     }
 
-    //2. Метод showMenu() - выводит на экран меню доступных пользовательских действий;
-
     private void showMenu() {
         String[] menu = {
                 "Add new Item", "Show all items", "Edit item",
@@ -27,7 +24,6 @@ public class StartUI {
                 "Exit Program"
         };
 
-        //Чтобы вывести в консоль этот массив поэлементно с обозначением номера пункта меню - используем следующий цикл:
         for (int i = 0; i < menu.length; i++) {
             System.out.println(i + ". " + menu[i]);
         }
