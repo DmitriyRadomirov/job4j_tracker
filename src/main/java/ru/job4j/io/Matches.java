@@ -3,7 +3,7 @@ package ru.job4j.io;
 import java.util.Scanner;
 
 public class Matches {
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.println("Игра 11.");
         boolean turn = true;
@@ -14,19 +14,26 @@ public class Matches {
             int matches = Integer.parseInt(input.nextLine());
             turn = !turn;
 
+            if (count == 1) {
+                System.out.println("Не верное число. " + player + " введите число 1");
+                matches = Integer.parseInt(input.nextLine());
+            } else if (count == 2) {
+                System.out.println("Не верное число. " + player + " введите число 1 или 2");
+                matches = Integer.parseInt(input.nextLine());
+            } else if (count == 3) {
+                System.out.println("Не верное число. " + player + " введите число от 1 до 3");
+                matches = Integer.parseInt(input.nextLine());
+            }
             while (matches > 3 && count > 0) {
                 System.out.println("Не верное число. " + player + " введите число от 1 до 3:");
-                turn = true;
                 matches = Integer.parseInt(input.nextLine());
             }
 
-                  for (int i = 11; i <= 11; i++) {
-                    count -= matches;
-                    System.out.println("На столе осталось " + count + " спичек");
-
-                }
+            for (int i = 11; i <= 11; i++) {
+                count -= matches;
+                System.out.println("На столе осталось " + count + " спичек");
             }
-
+        }
         if (!turn) {
             System.out.println("Выиграл первый игрок");
         } else {
