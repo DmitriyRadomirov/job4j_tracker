@@ -12,26 +12,12 @@ public class Matches {
             String player = turn ? "Первый игрок" : "Второй игрок";
             System.out.println(player + " введите число от 1 до 3:");
             int matches = Integer.parseInt(input.nextLine());
-            turn = !turn;
-
-            if (count == 1) {
-                System.out.println("Не верное число. " + player + " введите число 1");
-                matches = Integer.parseInt(input.nextLine());
-            } else if (count == 2) {
-                System.out.println("Не верное число. " + player + " введите число 1 или 2");
-                matches = Integer.parseInt(input.nextLine());
-            } else if (count == 3) {
-                System.out.println("Не верное число. " + player + " введите число от 1 до 3");
-                matches = Integer.parseInt(input.nextLine());
-            }
-            while (matches > 3 && count > 0) {
-                System.out.println("Не верное число. " + player + " введите число от 1 до 3:");
-                matches = Integer.parseInt(input.nextLine());
-            }
-
-            for (int i = 11; i <= 11; i++) {
+            if (matches <= Math.min(count, 3) && matches >= 1) {
                 count -= matches;
                 System.out.println("На столе осталось " + count + " спичек");
+                turn = !turn;
+            } else {
+                System.out.println("Не верное число. " + player + " введите число от 1 до 3:");
             }
         }
         if (!turn) {
