@@ -3,17 +3,22 @@ package ru.job4j.poly;
 public class Bus implements Transport {
 
     @Override
-    public int run() {
-        return 0;
+    public void run() {
+        System.out.println("The bus is operated by autopilot");
     }
 
     @Override
-    public int passengers(int count) {
-        return 0;
+    public void passengers(int count) {
+        int priceBusTicket = 1;
+        int sumPerTrip;
+        sumPerTrip = count * priceBusTicket;
     }
 
     @Override
-    public int refueling(int numOfLiters, int price) {
-        return 0;
+    public int refueling(int numOfLiters) {
+        int priceFuel = 60;
+        int sumPerFuel;
+        sumPerFuel = numOfLiters * priceFuel;
+       return sumPerFuel;
     }
 }
