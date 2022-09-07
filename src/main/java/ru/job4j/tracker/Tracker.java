@@ -1,7 +1,5 @@
 package ru.job4j.tracker;
 
-import ru.job4j.pojo.Product;
-
 import java.util.Arrays;
 
 public class Tracker {
