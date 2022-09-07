@@ -70,23 +70,17 @@ public class StartUI {
             int select = input.askInt("Select: ");
             if (select == 0) {
                 StartUI.createItem(input, tracker);
-            }
-            if (select == 1) {
+            } else if (select == 1) {
                 StartUI.showAllItems(input, tracker);
-            }
-            if (select == 2) {
+            } else if (select == 2) {
                 StartUI.editItem(input, tracker);
-            }
-            if (select == 3) {
+            } else if (select == 3) {
                 StartUI.deleteItem(input, tracker);
-            }
-            if (select == 4) {
+            } else if (select == 4) {
                 StartUI.findItemById(input, tracker);
-            }
-            if (select == 5) {
+            } else if (select == 5) {
                 StartUI.findItemByName(input, tracker);
-            }
-            if (select == 6) {
+            } else if  (select == 6) {
                 run = false;
             }
         }
