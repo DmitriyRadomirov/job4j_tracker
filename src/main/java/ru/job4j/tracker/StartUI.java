@@ -17,6 +17,7 @@ public class StartUI {
             for (Item item : items) {
                 System.out.println(item);
             }
+        } else {
             System.out.println("Хранилище еще не содержит заявок");
         }
     }
@@ -28,8 +29,10 @@ public class StartUI {
         Item item = new Item(name);
         if (tracker.replace(id, item)) {
             System.out.println("Заявка изменена успешно.");
+
+        } else {
+            System.out.println("Ошибка замены заявки.");
         }
-        System.out.println("Ошибка замены заявки.");
     }
 
     public static void deleteItem(Input input, Tracker tracker) {
@@ -37,8 +40,9 @@ public class StartUI {
         int id = input.askInt("Enter id: ");
         if (tracker.delete(id)) {
             System.out.println("Заявка удалена успешно.");
+        } else {
+            System.out.println("Ошибка удаления заявки.");
         }
-        System.out.println("Ошибка удаления заявки.");
     }
 
     public static void findItemById(Input input, Tracker tracker) {
@@ -47,8 +51,9 @@ public class StartUI {
         Item item = tracker.findById(id);
         if (item != null) {
             System.out.println(item);
+        } else {
+            System.out.println("Заявка с введенным id: " + id + " не найдена.");
         }
-        System.out.println("Заявка с введенным id: " + id + " не найдена.");
     }
 
     public static void findItemByName(Input input, Tracker tracker) {
@@ -59,6 +64,7 @@ public class StartUI {
             for (Item item : items) {
                 System.out.println(item);
             }
+            } else {
             System.out.println("Заявки с именем: " + name + " не найдены.");
         }
     }
