@@ -9,6 +9,7 @@ public class StartUI {
         tracker.add(item);
         System.out.println("Добавленная заявка: " + item);
     }
+
   public static void showAllItems(Input input, Tracker tracker) {
         System.out.println("=== Show all items ===");
         Item[] items = tracker.findAll();
@@ -33,7 +34,7 @@ public class StartUI {
             System.out.println("Ошибка замены заявки.");
         }
     }
-    */
+
   public static void deleteItem(Input input, Tracker tracker) {
         System.out.println("=== Delete item ===");
         int id = input.askInt("Enter id: ");
@@ -67,7 +68,7 @@ public class StartUI {
             System.out.println("Заявки с именем: " + name + " не найдены.");
         }
     }
-*/
+
    public void init(Input input, Tracker tracker, UserAction[] actions) {
         boolean run = true;
         while (run) {
