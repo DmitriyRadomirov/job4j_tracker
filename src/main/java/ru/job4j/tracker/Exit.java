@@ -7,6 +7,7 @@ public class Exit implements UserAction {
     }
 
     public Boolean execute(Input input, Tracker tracker) {
+        System.out.println("Программа завершена");
         return false;
     }
 }
