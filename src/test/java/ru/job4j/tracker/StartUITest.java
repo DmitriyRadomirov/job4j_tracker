@@ -1,4 +1,3 @@
-/**
 package ru.job4j.tracker;
 
 import org.junit.jupiter.api.Test;
@@ -38,11 +37,9 @@ public class StartUITest {
         tracker.add(item);
         String[] answers = {
                 String.valueOf(item.getId()),
-                "new item"
         };
         StartUI.deleteItem(new StubInput(answers), tracker);
         Item edited = tracker.findById(item.getId());
-        assertThat(edited).isEqualTo(null);
+        assertThat(edited).isNull();
     }
 }
- */
