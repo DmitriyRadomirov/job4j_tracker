@@ -15,18 +15,12 @@ public class FindEl {
         return rsl;
     }
 
-    public static class ElementNotFoundException extends Exception {
-        public ElementNotFoundException(String message) {
-            super(message);
-        }
-
-        public static void main(String[] args) {
-            try {
-                String[] strings = {"AAA", "BBB", "SSS"};
-                indexOf(strings, "SSS");
-            } catch (ElementNotFoundException e) {
-                e.printStackTrace();
-            }
+    public static void main(String[] args) {
+        try {
+            String[] strings = {"AAA", "BBB", "SSS"};
+            indexOf(strings, "SSS");
+        } catch (ElementNotFoundException e) {
+            e.printStackTrace();
         }
     }
 }
