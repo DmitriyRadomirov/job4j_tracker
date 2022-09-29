@@ -83,7 +83,7 @@ public class StartUITest {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
         Item one = tracker.add(new Item("test1"));
-                Input in = new StubInput(
+        Input in = new StubInput(
                 new String[]{"0", String.valueOf(one.getId()), "1"}
         );
         UserAction[] actions = new UserAction[]{
@@ -136,22 +136,49 @@ public class StartUITest {
     public void whenInvalidExit() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"7", "0"
-                        }
+                new String[]{"one", "1"
+                }
         );
-        Tracker tracker = new Tracker();
-        UserAction[] actions = new UserAction[]{
-                new Exit(out)
-        };
-        new StartUI(out).init(in, tracker, actions);
-        String ln = System.lineSeparator();
-        assertThat(out.toString()).isEqualTo(
-                "Menu:" + ln
-                        + "0. Exit Program" + ln
-                        + "Wrong input, you can select: 0 .. 0" + ln
-                        + "Menu:" + ln
-                        + "0. Exit Program" + ln
-                        +  "=== Exit Program ===" + ln
+
+        ValidateInput input = new ValidateInput(out, in);
+        int selected = input.askInt("Enter menu");
+        assertThat(selected).isEqualTo(1);
+    }
+
+    @Test
+    public void whenValidInput() {
+        Output out = new StubOutput();
+        Input in = new StubInput(
+                new String[]{"0"}
         );
+        ValidateInput input = new ValidateInput(out, in);
+        int selected = input.askInt("Enter menu");
+        assertThat(selected).isEqualTo(0);
+    }
+
+    @Test
+    public void whenValidMultiInput() {
+        Output out = new StubOutput();
+        Input in = new StubInput(
+                new String[]{"1", "2", "3"}
+        );
+        ValidateInput input = new ValidateInput(out, in);
+        int selected = input.askInt("Enter menu");
+        int selected1 = input.askInt("Enter menu");
+        int selected2 = input.askInt("Enter menu");
+        assertThat(selected).isEqualTo(1);
+        assertThat(selected1).isEqualTo(2);
+        assertThat(selected2).isEqualTo(3);
+    }
+
+    @Test
+    public void whenInvalidInputMinus1() {
+        Output out = new StubOutput();
+        Input in = new StubInput(
+                new String[]{"-1"}
+        );
+        ValidateInput input = new ValidateInput(out, in);
+        int selected = input.askInt("Enter menu");
+        assertThat(selected).isEqualTo(-1);
     }
 }
