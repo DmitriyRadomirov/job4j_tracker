@@ -1,4 +1,4 @@
-package ru.job4j.early;
+/* package ru.job4j.early;
 
 public class PasswordValidator {
     public static String validate(String password) {
@@ -28,3 +28,5 @@ public class PasswordValidator {
 //Пароль не содержит подстрок без учета регистра: qwerty, 12345, password, admin, user.
 // Без учета регистра,
 // значит что, например, ни qwerty ни QWERTY ни qwErty и т.п. не должно быть в составе пароля.
+
+ */
