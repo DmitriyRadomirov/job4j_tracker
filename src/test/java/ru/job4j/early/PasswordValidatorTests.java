@@ -113,7 +113,7 @@ public class PasswordValidatorTests {
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> {
-                    PasswordValidator.validate("aaaabbbb1Aa");
+                    PasswordValidator.validate("aaaabbbb3Aa");
                 });
         assertThat(exception.getMessage()).isEqualTo("Password must contain special characters");
     }
