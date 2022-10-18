@@ -118,4 +118,3 @@ public class PasswordValidatorTests {
         assertThat(exception.getMessage()).isEqualTo("Password must be including a number");
     }
 }
-
