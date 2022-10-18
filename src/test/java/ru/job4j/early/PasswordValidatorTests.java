@@ -53,7 +53,7 @@ public class PasswordValidatorTests {
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> {
-                    PasswordValidator.validate("AAAA+aAa");
+                    PasswordValidator.validate("AAAAQ@aAa");
                 });
         assertThat(exception.getMessage()).isEqualTo("Password must be including a number");
     }
@@ -63,9 +63,9 @@ public class PasswordValidatorTests {
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> {
-                    PasswordValidator.validate("Qwerty+1Aa");
+                    PasswordValidator.validate("AQwerty1Aa");
                 });
-        assertThat(exception.getMessage()).isEqualTo("Рassword must not contain \"qwerty\" ");
+        assertThat(exception.getMessage()).isEqualTo("Рassword must not contain \"qwerty\"");
     }
 
     @Test
@@ -75,7 +75,7 @@ public class PasswordValidatorTests {
                 () -> {
                     PasswordValidator.validate("12345+1Aa");
                 });
-        assertThat(exception.getMessage()).isEqualTo("Рassword must not contain \"12345\" ");
+        assertThat(exception.getMessage()).isEqualTo("Рassword must not contain \"12345\"");
     }
 
     @Test
@@ -85,7 +85,7 @@ public class PasswordValidatorTests {
                 () -> {
                     PasswordValidator.validate("password+1Aa");
                 });
-        assertThat(exception.getMessage()).isEqualTo("Рassword must not contain \"password\" ");
+        assertThat(exception.getMessage()).isEqualTo("Рassword must not contain \"password\"");
     }
 
     @Test
@@ -95,7 +95,7 @@ public class PasswordValidatorTests {
                 () -> {
                     PasswordValidator.validate("adMin+1Aa");
                 });
-        assertThat(exception.getMessage()).isEqualTo("Рassword must not contain \"admin\" ");
+        assertThat(exception.getMessage()).isEqualTo("Рassword must not contain \"admin\"");
     }
 
     @Test
@@ -103,9 +103,9 @@ public class PasswordValidatorTests {
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> {
-                    PasswordValidator.validate("useR+1Aa");
+                    PasswordValidator.validate("WWuseR+1Aa");
                 });
-        assertThat(exception.getMessage()).isEqualTo("Рassword must not contain \"user\" ");
+        assertThat(exception.getMessage()).isEqualTo("Рassword must not contain \"user\"");
     }
 
     @Test
