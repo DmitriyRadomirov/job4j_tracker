@@ -53,7 +53,7 @@ public class PasswordValidatorTests {
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> {
-                    PasswordValidator.validate("AAAAQ@aAa");
+                    PasswordValidator.validate("QQ@AAAAaAa");
                 });
         assertThat(exception.getMessage()).isEqualTo("Password must be including a number");
     }
