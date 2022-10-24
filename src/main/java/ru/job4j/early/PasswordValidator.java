@@ -20,18 +20,32 @@ public class PasswordValidator {
                 throw new IllegalArgumentException("Рassword must not contain" + " \"" + subString[i] + "\"");
             }
         }
-        String[] specChar = {"@", "#", "$", "%", "^", "&", "+", "="};
-        for (int k = 0; k < specChar.length; k++) {
-            if (password.contains(specChar[k])) {
-                break;
+        String specialChars = "/*!@#$%^&*()\"{}_[]|\\?/<>,.";
+        boolean a = false;
+        for (int i = 0; i < password.length(); i++) {
+            for (int j = 0; j < specialChars.length(); j++) {
+                if (password.charAt(i) == specialChars.charAt(j)) {
+                    a = true;
+                    break;
+                }
             }
+        }
+        if (!a) {
             throw new IllegalArgumentException("Password must contain special characters");
         }
-        for (char c : password.toCharArray()) {
-            if (!Character.isDigit(c)) {
-                throw new IllegalArgumentException("Password must be including a number");
+        String digital = "0123456789";
+        boolean b = false;
+        for (int i = 0; i < password.length(); i++) {
+            for (int j = 0; j < digital.length(); j++) {
+                if (password.charAt(i) == digital.charAt(j)) {
+                    b = true;
+                    break;
+                }
             }
         }
+        if (!b) {
+                throw new IllegalArgumentException("Password must be including a number");
+            }
         return password;
     }
 }

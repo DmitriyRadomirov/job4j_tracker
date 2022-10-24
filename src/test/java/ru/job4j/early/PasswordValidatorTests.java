@@ -49,16 +49,6 @@ public class PasswordValidatorTests {
     }
 
     @Test
-    public void whenPasswordIncorrectNoDigit() {
-        IllegalArgumentException exception = assertThrows(
-                IllegalArgumentException.class,
-                () -> {
-                    PasswordValidator.validate("QQ@AAAAaAa");
-                });
-        assertThat(exception.getMessage()).isEqualTo("Password must be including a number");
-    }
-
-    @Test
     public void whenPasswordIncorrectQwerty() {
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
@@ -116,5 +106,15 @@ public class PasswordValidatorTests {
                     PasswordValidator.validate("aaaabbbb1Aa");
                 });
         assertThat(exception.getMessage()).isEqualTo("Password must contain special characters");
+    }
+
+    @Test
+    public void whenPasswordIncorrectNoDigit() {
+        IllegalArgumentException exception = assertThrows(
+                IllegalArgumentException.class,
+                () -> {
+                    PasswordValidator.validate("QQAAA%AaAa");
+                });
+        assertThat(exception.getMessage()).isEqualTo("Password must be including a number");
     }
 }
