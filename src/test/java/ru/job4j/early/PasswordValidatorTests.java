@@ -93,7 +93,7 @@ public class PasswordValidatorTests {
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> {
-                    PasswordValidator.validate("WWuseR+1Aa");
+                    PasswordValidator.validate("WWuseR1Aa");
                 });
         assertThat(exception.getMessage()).isEqualTo("Рassword must not contain \"user\"");
     }
@@ -103,7 +103,7 @@ public class PasswordValidatorTests {
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> {
-                    PasswordValidator.validate("aaaabbbb1Aa");
+                    PasswordValidator.validate("aaaabbbbAa");
                 });
         assertThat(exception.getMessage()).isEqualTo("Password must contain special characters");
     }
@@ -113,7 +113,7 @@ public class PasswordValidatorTests {
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> {
-                    PasswordValidator.validate("QQAAA%AaAa");
+                    PasswordValidator.validate("QQAAA@AaAa");
                 });
         assertThat(exception.getMessage()).isEqualTo("Password must be including a number");
     }
