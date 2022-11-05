@@ -34,5 +34,3 @@ public final class Airbus extends Aircraft {
                 + '}';
     }
 }
-
-
